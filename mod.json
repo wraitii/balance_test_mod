@@ -1,6 +1,6 @@
 {
 	"name": "balance_test_mod",
-	"version": "0.0.24",
+	"version": "0.1.0",
 	"label": "Balance Test",
 	"url": "github.com/wraitii/balance_test_mod",
 	"description": "This mod intends to provide mod-agnostic capabilities to do balance testing.",
