@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<actor version="1">
+  <castshadow/>
+  <group>
+    <variant frequency="100" name="Base">
+      <animations/>
+      <mesh>bm_dummy_small.dae</mesh>
+      <props/>
+      <textures>
+        <texture file="bm_celt_prop_1.png" name="baseTex"/>
+      </textures>
+    </variant>
+  </group>
+  <material>bm_player_trans.xml</material>
+</actor>

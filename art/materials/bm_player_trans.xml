@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<material>
+  <define name="USE_PLAYERCOLOR" value="1"/>
+  <required_texture name="baseTex"/>
+  <!-- This requires the 0 A.D. shaders -->
+  <shader effect="model"/>
+</material>

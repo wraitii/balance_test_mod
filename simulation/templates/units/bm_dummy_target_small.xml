@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity parent="template_bm_dummy_target">
+  <Footprint>
+    <Circle radius="1.5"/>
+    <Height>4.0</Height>
+  </Footprint>
+  <Obstruction>
+    <!-- Use static to avoid relying on passability classes. -->
+    <Static width="3.0" depth="3.0"/>
+  </Obstruction>
+  <VisualActor>
+    <Actor>bm_dummy_small.xml</Actor>
+  </VisualActor>
+</Entity>

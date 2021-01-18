@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<object>
+	<script file="gui/session/bm_menu/quickspawn.js"/>
+	<object name="quickspawn_list" type="olist" sortable="true"
+		size="25% 20% 75% 80%"
+		ghost="true"
+		hidden="true"
+		>
+		<action on="Load">QuickSpawn.init();</action>
+
+		<column id="ent_name" color="255 255 255" width="75%">
+			<translatableAttribute id="heading">Entity Name</translatableAttribute>
+		</column>
+		<column id="civ" color="255 255 255" width="25%">
+			<translatableAttribute id="heading">Civ</translatableAttribute>
+		</column>
+	</object>
+</object>

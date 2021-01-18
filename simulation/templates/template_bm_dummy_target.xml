@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Entity>
+  <Health>
+    <Max>100000</Max>
+    <RegenRate>0</RegenRate>
+    <IdleRegenRate>0</IdleRegenRate>
+    <DeathType>vanish</DeathType>
+    <Unhealable>false</Unhealable>
+  </Health>
+  <Identity>
+    <Civ>gaia</Civ>
+    <GenericName>Dummy Target</GenericName>
+    <Icon>gaia/fauna_generic.png</Icon>
+    <Formations disable=""/>
+    <Undeletable>false</Undeletable>
+  </Identity>
+  <Minimap>
+    <Type>food</Type>
+    <Color r="227" g="130" b="141"/>
+  </Minimap>
+  <Obstruction>
+    <Active>true</Active>
+    <BlockMovement>true</BlockMovement>
+    <BlockPathfinding>true</BlockPathfinding>
+    <BlockFoundation>true</BlockFoundation>
+    <BlockConstruction>true</BlockConstruction>
+    <DisableBlockMovement>false</DisableBlockMovement>
+    <DisableBlockPathfinding>false</DisableBlockPathfinding>
+    <DeleteUponConstruction>false</DeleteUponConstruction>
+  </Obstruction>
+  <OverlayRenderer/>
+  <Ownership/>
+  <Position>
+    <Altitude>0</Altitude>
+    <Anchor>upright</Anchor>
+    <Floating>false</Floating>
+    <FloatDepth>0</FloatDepth>
+    <TurnRate>6</TurnRate>
+  </Position>
+  <Resistance/>
+  <Selectable>
+    <Overlay>
+      <Shape>
+        <Circle radius="1.5"/>
+      </Shape>
+      <Outline>
+        <LineTexture>outline_border.png</LineTexture>
+        <LineTextureMask>outline_border_mask.png</LineTextureMask>
+        <LineThickness>0.2</LineThickness>
+      </Outline>
+    </Overlay>
+  </Selectable>
+  <StatusBars>
+    <BarWidth>2.0</BarWidth>
+    <BarHeight>0.333</BarHeight>
+    <HeightOffset>5.0</HeightOffset>
+  </StatusBars>
+  <Visibility>
+    <RetainInFog>true</RetainInFog>
+    <AlwaysVisible>false</AlwaysVisible>
+    <Corpse>false</Corpse>
+    <Preview>false</Preview>
+  </Visibility>
+  <Vision>
+    <Range>10</Range>
+  </Vision>
+  <VisualActor>
+    <SilhouetteDisplay>false</SilhouetteDisplay>
+    <SilhouetteOccluder>true</SilhouetteOccluder>
+    <VisibleInAtlasOnly>false</VisibleInAtlasOnly>
+  </VisualActor>
+</Entity>

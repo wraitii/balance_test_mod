@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<object>
+	<script file="gui/session/bm_menu/unit_details.js"/>
+	<object type="image" style="ModernDialog" size="5% 5% 95% 95%">
+	
+		<object name="title" type="text" style="TitleText" size="50%-128 -18 50%+128 14">
+			<translatableAttribute id="caption">Stat Sheet</translatableAttribute>
+		</object>
+
+		<object type="input" name="nameFilter" size="16 34 416 58"
+			style="ModernInput" placeholder_text="name match">template_</object>
+
+		<object type="input" name="classFilter" size="420 34 720 58"
+			style="ModernInput" placeholder_text="class match">Unit</object>
+
+		<object type="input" name="stat0Eval" size="16 62 16+33% 86"
+			style="ModernInput" placeholder_text="Enter JS for stat 0"/>
+
+		<object type="input" name="stat1Eval" size="16+33% 62 66% 86"
+			style="ModernInput" placeholder_text="Enter JS for stat 1"/>
+
+		<object type="input" name="stat2Eval" size="66% 62 100%-16 86"
+			style="ModernInput" placeholder_text="Enter JS for stat 2"/>
+
+		<object name="unit_details_list" type="olist" sortable="true"
+			style="ModernSortedList"
+			size="16 90 100%-16 100%-16"
+			hidden="false"
+			z="50"
+		>
+			<action on="Load">UnitDetails.init();</action>
+
+			<column id="template" color="255 255 255" width="30%">
+				<translatableAttribute id="heading">Template</translatableAttribute>
+			</column>
+			<column id="civ" color="255 255 255" width="5%">
+				<translatableAttribute id="heading">Civ</translatableAttribute>
+			</column>
+			<column id="stat_0" color="255 255 255" width="20%">
+				<translatableAttribute id="heading">Stat 0</translatableAttribute>
+			</column>
+			<column id="stat_1" color="255 255 255" width="20%">
+				<translatableAttribute id="heading">Stat 1</translatableAttribute>
+			</column>
+			<column id="stat_2" color="255 255 255" width="20%">
+				<translatableAttribute id="heading">Stat 2</translatableAttribute>
+			</column>
+		</object>
+	</object>
+</object>
