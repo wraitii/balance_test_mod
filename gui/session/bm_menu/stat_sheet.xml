@@ -20,10 +20,16 @@
 		<action on="Press">StatSheetAuraTechs.Open();</action>
 	</object>
 
-	<object name="bm_stat_sheet" type="image" style="ModernDialog" size="5% 5% 95% 95%">
+	<object name="bm_stat_sheet" type="image" style="ModernDialog" size="5% 5% 95% 95%" hidden="true">
 		<object type="text" style="TitleText" size="50%-128 -18 50%+128 14">
 			<translatableAttribute id="caption">Stat Sheet</translatableAttribute>
 		</object>
+
+		<action on="Load">
+			StatSheet.Init();
+			StatSheetUnits.Init();
+			StatSheetAuraTechs.Init();
+		</action>
 
 		<object size="100%-224 16 100%-124 46"
 			    type="button" hidden="false" style="ModernButtonRed">
@@ -64,12 +70,6 @@
 			size="16 90 100%-16 100%-16"
 			hidden="false"
 		>
-			<action on="Load">
-				StatSheet.Init();
-				StatSheetUnits.Init();
-				StatSheetAuraTechs.Init();
-			</action>
-
 			<column id="template" color="255 255 255" width="30%">
 				<translatableAttribute id="heading">Template</translatableAttribute>
 			</column>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Entity>
   <Health>
-    <Max>100000</Max>
+    <Max>1000</Max>
     <RegenRate>0</RegenRate>
     <IdleRegenRate>0</IdleRegenRate>
     <DeathType>vanish</DeathType>

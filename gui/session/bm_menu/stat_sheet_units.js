@@ -7,7 +7,6 @@ class StatSheetUnits
 	static Init()
 	{
 		g_StatSheetUnits = new StatSheetUnits();
-		StatSheetUnits.Open();
 	}
 
 	static Open()

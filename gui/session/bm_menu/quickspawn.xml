@@ -2,18 +2,42 @@
 
 <object>
 	<script file="gui/session/bm_menu/quickspawn.js"/>
-	<object name="quickspawn_list" type="olist" sortable="true"
-		size="25% 20% 75% 80%"
-		ghost="true"
-		hidden="true"
-		>
-		<action on="Load">QuickSpawn.init();</action>
+	<object name="bm_quickspawn_button" size="0% 20% 64 20%+48"
+		    type="button" hidden="false" style="ModernButtonRed">
+		<translatableAttribute id="caption">Quick Spawn</translatableAttribute>
+		<action on="Press">QuickSpawn.Open();</action>
+	</object>
 
-		<column id="ent_name" color="255 255 255" width="75%">
-			<translatableAttribute id="heading">Entity Name</translatableAttribute>
-		</column>
-		<column id="civ" color="255 255 255" width="25%">
-			<translatableAttribute id="heading">Civ</translatableAttribute>
-		</column>
+	<object name="bm_quickspawn" type="image" style="ModernDialog" size="25% 10% 75% 90%"
+		hidden="true">
+		<object type="text" style="TitleText" size="50%-128 -18 50%+128 14">
+			<translatableAttribute id="caption">Quick Spawn</translatableAttribute>
+		</object>
+
+		<action on="Load">
+			QuickSpawn.Init();
+		</action>
+
+		<object size="100%-120 16 100%-16 46"
+			    type="button" hidden="false" style="ModernButtonRed">
+			<translatableAttribute id="caption">Close</translatableAttribute>
+			<action on="Press">QuickSpawn.Close();</action>
+		</object>
+
+		<object type="dropdown" name="bm_qs_scenario" size="10% 32 90% 60"
+			style="ModernDropDown"/>
+
+		<object type="text" size="10% 64 90% 90" style="ModernLeftLabelText">
+			<translatableAttribute id="caption">Command</translatableAttribute>
+		</object>
+		<object type="input" name="bm_sq_input" size="10% 94 90% 100%-52"
+			style="ModernInput" multiline="true"
+			placeholder_text="Enter a command."/>
+
+		<object name="bm_quickspawn_send" size="100%-120 100%-48 100%-16 100%-16"
+			    type="button" hidden="false" style="ModernButtonRed">
+			<translatableAttribute id="caption">Create</translatableAttribute>
+			<action on="Press">g_QuickSpawn.create();</action>
+		</object>
 	</object>
 </object>
