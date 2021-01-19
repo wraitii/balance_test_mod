@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <object z="100">
-	<script file="gui/session/bm_menu/unit_details.js"/>
+	<script file="gui/session/bm_menu/stat_sheet.js"/>
+	<script file="gui/session/bm_menu/stat_sheet_units.js"/>
+	<script file="gui/session/bm_menu/stat_sheet_aura_techs.js"/>
 
-	<object name="bm_unit_details_button" size="0% 5% 64 5%+48"
+	<script file="gui/session/bm_menu/formatters_unit.js"/>
+	<script file="gui/session/bm_menu/formatters_aura_techs.js"/>
+
+	<object name="bm_stat_sheet_units_button" size="0% 5% 64 5%+48"
 		    type="button" hidden="false" style="ModernButtonRed">
-		<translatableAttribute id="caption">Stat Sheet</translatableAttribute>
-		<action on="Press">UnitDetails.Open();</action>
+		<translatableAttribute id="caption">Unit Sheet</translatableAttribute>
+		<action on="Press">StatSheetUnits.Open();</action>
 	</object>
 
-	<object name="bm_unit_details" type="image" style="ModernDialog" size="5% 5% 95% 95%">
+	<object name="bm_stat_sheet_aura_techs_button" size="0% 5%+52 64 5%+100"
+		    type="button" hidden="false" style="ModernButtonRed">
+		<translatableAttribute id="caption">Tech Sheet</translatableAttribute>
+		<action on="Press">StatSheetAuraTechs.Open();</action>
+	</object>
+
+	<object name="bm_stat_sheet" type="image" style="ModernDialog" size="5% 5% 95% 95%">
 		<object type="text" style="TitleText" size="50%-128 -18 50%+128 14">
 			<translatableAttribute id="caption">Stat Sheet</translatableAttribute>
 		</object>
@@ -17,43 +28,47 @@
 		<object size="100%-224 16 100%-124 46"
 			    type="button" hidden="false" style="ModernButtonRed">
 			<translatableAttribute id="caption">Export</translatableAttribute>
-			<action on="Press">g_UnitDetails.export();</action>
+			<action on="Press">g_StatSheet.export();</action>
 		</object>
 
 		<object size="100%-120 16 100%-16 46"
 			    type="button" hidden="false" style="ModernButtonRed">
 			<translatableAttribute id="caption">Close</translatableAttribute>
-			<action on="Press">UnitDetails.Close();</action>
+			<action on="Press">StatSheet.Close();</action>
 		</object>
 
 		<!-- Filter section -->
-		<object name="bm_ud_presets_list" size="16 34 212 58"
+		<object name="bm_ss_presets_list" size="16 34 212 58"
 			    type="dropdown" hidden="false" style="ModernDropDown">
 		</object>
 
-		<object type="input" name="bm_ud_nameFilter" size="216 34 616 58"
+		<object type="input" name="bm_ss_nameFilter" size="216 34 616 58"
 			style="ModernInput" placeholder_text="name match">template_</object>
 
-		<object type="input" name="bm_ud_classFilter" size="620 34 820 58"
+		<object type="input" name="bm_ss_classFilter" size="620 34 820 58"
 			style="ModernInput" placeholder_text="class match">Unit</object>
 
 		<!-- Stat Eval inputs -->
-		<object type="input" name="bm_ud_stat0Eval" size="16 62 16+33% 86"
+		<object type="input" name="bm_ss_stat0Eval" size="16 62 16+33% 86"
 			style="ModernInput" placeholder_text="Enter JS for stat 0"/>
 
-		<object type="input" name="bm_ud_stat1Eval" size="16+33% 62 66% 86"
+		<object type="input" name="bm_ss_stat1Eval" size="16+33% 62 66% 86"
 			style="ModernInput" placeholder_text="Enter JS for stat 1"/>
 
-		<object type="input" name="bm_ud_stat2Eval" size="66% 62 100%-16 86"
+		<object type="input" name="bm_ss_stat2Eval" size="66% 62 100%-16 86"
 			style="ModernInput" placeholder_text="Enter JS for stat 2"/>
 
 		<!-- Lists -->
-		<object name="bm_unit_details_list" type="olist" sortable="true"
+		<object name="bm_stat_sheet_list" type="olist" sortable="true"
 			style="ModernSortedList"
 			size="16 90 100%-16 100%-16"
 			hidden="false"
 		>
-			<action on="Load">UnitDetails.Init();</action>
+			<action on="Load">
+				StatSheet.Init();
+				StatSheetUnits.Init();
+				StatSheetAuraTechs.Init();
+			</action>
 
 			<column id="template" color="255 255 255" width="30%">
 				<translatableAttribute id="heading">Template</translatableAttribute>
@@ -72,30 +87,5 @@
 			</column>
 		</object>
 
-		<!-- Preset list
-		<object name="bm_ud_presets" type="image" style="ModernDialog" size="20% 20% 80% 80%"
-			z="40">
-			<object type="text" style="TitleText" size="50%-128 -18 50%+128 14">
-				<translatableAttribute id="caption">Presets</translatableAttribute>
-			</object>
-			<object size="100%-120 -16 100%-16 20"
-				    type="button" hidden="false" style="ModernButtonRed">
-				<translatableAttribute id="caption">Close</translatableAttribute>
-				<action on="Press">UnitDetails.PresetClose();</action>
-			</object>
-
-			<object name="bm_ud_presets_list" type="olist"
-				style="ModernSortedList" size="16 16 100%-16 100%-16"
-				hidden="false"
-			>
-				<column id="name" color="255 255 255" width="33%">
-					<translatableAttribute id="heading">Preset</translatableAttribute>
-				</column>
-				<column id="desc" color="255 255 255" width="67%">
-					<translatableAttribute id="heading">Description</translatableAttribute>
-				</column>
-			</object>
-		</object>
-		-->
 	</object>
 </object>
